@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🌐 C++ LRU Cache History Manager
 
 A command-line application that simulates an optimized navigation history using a custom-built **Doubly Linked List (DLL)**. This project implements the core mechanics of a Least Recently Used (LRU) Cache, allowing for highly efficient, constant-time state management.
