@@ -46,8 +46,18 @@ int main()
             case 1:
                 cout<<"Enter url: ";
                 cin>>url;
-                history.push_front(url);
-                cout<<"Visited: "<<url<<endl;
+                
+                {
+                    auto target = history.searcher(url);
+                    
+                    if (target != nullptr) {
+                        history.movetohead(target);
+                        cout << "Page Re-visited: " << url << endl;
+                    } else {
+                        history.push_front(url);
+                        cout << "Visited: " << url << endl;
+                    }
+                }
                 break;
 
             case 2: 
