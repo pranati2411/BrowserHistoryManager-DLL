@@ -10,29 +10,14 @@ A lightweight, command-line browser history manager written in C++. This project
 * **Defensive Programming:** Includes robust input validation to prevent infinite loops or crashes from invalid user inputs.
 * **Duplicate Handling:** Enforces cache uniqueness by checking for existing entries before allocating new nodes, routing duplicates directly to the relocation function.
 
-## Data Structure & Complexities
+## 🛠️ Data Structure
+This project utilizes a **Doubly Linked List** to ensure efficient operations:
+* **Insertion at Head:** O(1)
+* **Deletion at Tail:** O(1)
+* **Move to Head:** O(n) for search, O(1) for pointer manipulation.
 
-This system avoids standard library containers to explicitly demonstrate raw pointer mechanics.
-
-* **Insertion at Head:** `O(1)`
-* **Deletion at Tail:** `O(1)`
-* **Relocation (Move to Head):** `O(1)` for pointer reassignment. 
-
-## Compilation & Execution
-
-Compiled via GCC with standard C++ libraries. No external dependencies required.
-
-### Build
-g++ main.cpp -o browser
-
-### Run
-./browser
-
-## Usage Interface
-
-Upon execution, the CLI presents the following interactive loop:
-1. **Visit New Page:** Pushes a new URL to the top of the history stack.
-2. **Re-Visit Page:** Searches for an existing URL and relocates it to the top.
-3. **Clear Oldest History:** Evicts the least recently used URL (tail) to free memory.
-4. **View History:** Traverses and prints the current state from newest to oldest.
-5. **Exit:** Safely terminates the loop and triggers the DLL destructor to free the heap.
+## 💻 How to Run
+1. Clone the repository or download the source code.
+2. Compile the project using g++:
+   ```bash
+   g++ main.cpp -o browser
