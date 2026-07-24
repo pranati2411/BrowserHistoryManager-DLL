@@ -15,3 +15,22 @@ This project utilizes a **Doubly Linked List** to ensure efficient operations:
 * **Insertion at Head:** O(1)
 * **Deletion at Tail:** O(1)
 * **Move to Head:** O(n) for search, O(1) for pointer manipulation.
+
+## Compilation & Execution
+
+Compiled via GCC with standard C++ libraries. No external dependencies required.
+
+### Build
+g++ main.cpp -o browser
+
+### Run
+./browser
+
+## Usage Interface
+
+Upon execution, the CLI presents the following interactive loop:
+1. **Visit New Page:** Pushes a new URL to the top of the history stack.
+2. **Re-Visit Page:** Searches for an existing URL and relocates it to the top.
+3. **Clear Oldest History:** Evicts the least recently used URL (tail) to free memory.
+4. **View History:** Traverses and prints the current state from newest to oldest.
+5. **Exit:** Safely terminates the loop and triggers the DLL destructor to free the heap.
