@@ -1,6 +1,7 @@
 #ifndef DOUBLYLINKEDLIST_H
 #define DOUBLYLINKEDLIST_H
 #include <iostream>
+#include <unordered_map>
 
 template <typename T>
 struct Node

@@ -4,7 +4,6 @@
 #include "DoublyLinkedList.h"
 
 using namespace std;
-
 void showmenu()
 {
     cout<<"\n--- BROWSER HISTORY MANAGER---\n";
