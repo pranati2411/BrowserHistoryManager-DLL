@@ -24,14 +24,13 @@ class dll
 
     Node<T> * head;
     Node<T> * tail;
-    int size;
+    std::unordered_map<T, Node<T>*> cacheMap;
 
     public:
     dll()
     {
         head = nullptr;
         tail = nullptr;
-        size = 0;
     }
 
     ~dll()
@@ -48,6 +47,9 @@ class dll
     void deletetail()
     {
         if(tail==nullptr) return;
+
+        cacheMap.erase(tail->data);
+
         else if(head==tail)
         {
             Node<T> * temp  = head;
@@ -56,9 +58,10 @@ class dll
         }
         else
         {
+            Node<T>* temp = tail;
             tail = tail->prev;
-            delete tail->next;
             tail->next = nullptr;
+            delete temp;
         }
     }
 
@@ -95,7 +98,8 @@ class dll
             head->prev = newnode;
             head = newnode;
         }
-        size++;
+
+        cacheMap[val] = newnode;
     }
 
     void print()
@@ -116,12 +120,8 @@ class dll
 
     Node<T>* searcher(T key) 
     {
-        Node<T>* temp = head;
-        while (temp != nullptr) {
-            if (temp->data == key) {
-                return temp;
-            }
-            temp = temp->next;
+        if(cacheMap.find(key) != cacheMap.end()) {
+            return cacheMap[key];
         }
         return nullptr;
     }
