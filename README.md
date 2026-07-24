@@ -14,7 +14,7 @@ A lightweight, command-line browser history manager written in C++. This project
 This project utilizes a **Doubly Linked List** to ensure efficient operations:
 * **Insertion at Head:** O(1)
 * **Deletion at Tail:** O(1)
-* **Move to Head:** O(n) for search, O(1) for pointer manipulation.
+* **Move to Head:** O(1) for search, O(1) for pointer manipulation.
 
 ## Compilation & Execution
 
