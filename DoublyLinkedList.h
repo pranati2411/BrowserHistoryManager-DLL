@@ -50,7 +50,7 @@ class dll
 
         cacheMap.erase(tail->data);
 
-        else if(head==tail)
+        if(head==tail)
         {
             Node<T> * temp  = head;
             head = tail = nullptr;
